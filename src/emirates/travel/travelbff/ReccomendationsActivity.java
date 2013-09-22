@@ -2,7 +2,10 @@ package emirates.travel.travelbff;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -13,7 +16,9 @@ import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
  
 public class ReccomendationsActivity extends Activity {
- 
+	ReccomendationsActivity instance;
+	TreeMap<Integer, String> finalScoreMap = new TreeMap<Integer, String>();
+	
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
@@ -23,6 +28,10 @@ public class ReccomendationsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reccomendations);
+        
+        Intent intent = getIntent();
+		instance = this;
+		finalScoreMap = (TreeMap<Integer, String>) intent.getExtras().get("FINAL_MAP");
  
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.expandableListView1);
@@ -99,37 +108,40 @@ public class ReccomendationsActivity extends Activity {
         listDataChild = new HashMap<String, List<String>>();
  
         // Adding child data
-        listDataHeader.add("Top 250");
-        listDataHeader.add("Now Showing");
-        listDataHeader.add("Coming Soon..");
+        listDataHeader.add(finalScoreMap.get(1));
+        listDataHeader.add(finalScoreMap.get(2));
+        listDataHeader.add(finalScoreMap.get(3));
  
         // Adding child data
-        List<String> top250 = new ArrayList<String>();
-        top250.add("The Shawshank Redemption");
-        top250.add("The Godfather");
-        top250.add("The Godfather: Part II");
-        top250.add("Pulp Fiction");
-        top250.add("The Good, the Bad and the Ugly");
-        top250.add("The Dark Knight");
-        top250.add("12 Angry Men");
+        List<String> city1 = new ArrayList<String>();
+        city1.add("People Culture");
+        city1.add("Music");
+        city1.add("Adventure");
+        city1.add("History");
+        city1.add("Entertainment");
+        city1.add("Food");
+        city1.add("Nature");
  
-        List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("The Conjuring");
-        nowShowing.add("Despicable Me 2");
-        nowShowing.add("Turbo");
-        nowShowing.add("Grown Ups 2");
-        nowShowing.add("Red 2");
-        nowShowing.add("The Wolverine");
+        List<String> city2 = new ArrayList<String>();
+        city2.add("People Culture");
+        city2.add("Music");
+        city2.add("Adventure");
+        city2.add("History");
+        city2.add("Entertainment");
+        city2.add("Food");
+        city2.add("Nature");
  
-        List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
+        List<String> city3 = new ArrayList<String>();
+        city3.add("People Culture");
+        city3.add("Music");
+        city3.add("Adventure");
+        city3.add("History");
+        city3.add("Entertainment");
+        city3.add("Food");
+        city3.add("Nature");
  
-        listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), nowShowing);
-        listDataChild.put(listDataHeader.get(2), comingSoon);
+        listDataChild.put(listDataHeader.get(0), city1); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), city2);
+        listDataChild.put(listDataHeader.get(2), city3);
     }
 }
