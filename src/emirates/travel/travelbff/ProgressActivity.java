@@ -16,6 +16,8 @@ public class ProgressActivity extends Activity {
 		setContentView(R.layout.activity_progress);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		
 	}
 
 	/**

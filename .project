@@ -3,6 +3,8 @@
 	<name>TravelBff</name>
 	<comment></comment>
 	<projects>
+		<project>Launcher</project>
+		<project>library</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
