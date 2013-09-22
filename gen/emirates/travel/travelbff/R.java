@@ -185,12 +185,16 @@ containing a value of this type.
         public static final int startscreen=0x7f020007;
     }
     public static final class id {
-        public static final int action_settings=0x7f040010;
+        public static final int action_settings=0x7f040014;
         public static final int budget_bar=0x7f04000b;
         public static final int button1=0x7f04000c;
         public static final int clickRemove=0x7f040000;
+        public static final int expandableListView1=0x7f040011;
         public static final int flingRemove=0x7f040001;
         public static final int interestList=0x7f04000e;
+        public static final int lblListHeader=0x7f040012;
+        public static final int lblListItem=0x7f040013;
+        public static final int linearLayout1=0x7f040010;
         public static final int onDown=0x7f040002;
         public static final int onLongPress=0x7f040004;
         public static final int onMove=0x7f040003;
@@ -209,6 +213,8 @@ containing a value of this type.
         public static final int activity_progress=0x7f030002;
         public static final int activity_rank_interests=0x7f030003;
         public static final int activity_reccomendations=0x7f030004;
+        public static final int list_group=0x7f030005;
+        public static final int list_item=0x7f030006;
     }
     public static final class menu {
         public static final int display_message=0x7f080000;

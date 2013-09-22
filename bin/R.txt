@@ -26,12 +26,16 @@ int drawable screen1background 0x7f020004
 int drawable screen2background 0x7f020005
 int drawable screen3background 0x7f020006
 int drawable startscreen 0x7f020007
-int id action_settings 0x7f040010
+int id action_settings 0x7f040014
 int id budget_bar 0x7f04000b
 int id button1 0x7f04000c
 int id clickRemove 0x7f040000
+int id expandableListView1 0x7f040011
 int id flingRemove 0x7f040001
 int id interestList 0x7f04000e
+int id lblListHeader 0x7f040012
+int id lblListItem 0x7f040013
+int id linearLayout1 0x7f040010
 int id onDown 0x7f040002
 int id onLongPress 0x7f040004
 int id onMove 0x7f040003
@@ -48,6 +52,8 @@ int layout activity_main 0x7f030001
 int layout activity_progress 0x7f030002
 int layout activity_rank_interests 0x7f030003
 int layout activity_reccomendations 0x7f030004
+int layout list_group 0x7f030005
+int layout list_item 0x7f030006
 int menu display_message 0x7f080000
 int menu enter_city 0x7f080001
 int menu enter_trip_details 0x7f080002
