@@ -78,4 +78,21 @@
         android:text="What is your Budget Range"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="18dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/seekBar1"
+        android:layout_marginTop="28dp"
+        android:text="Next Step" />
+
 </RelativeLayout>
