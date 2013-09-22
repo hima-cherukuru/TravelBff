@@ -16,5 +16,7 @@
     <string name="title_activity_rank_interests">Drag and Drop to Rank Your Interests</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_reccomendations">ReccomendationsActivity</string>
+    <string name="title_activity_progress">ProgressActivity</string>
+    <string name="show_progress_prompt">Searching for your next destination</string>
 
 </resources>

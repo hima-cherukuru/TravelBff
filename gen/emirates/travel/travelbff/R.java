@@ -185,36 +185,39 @@ containing a value of this type.
         public static final int startscreen=0x7f020007;
     }
     public static final class id {
-        public static final int action_settings=0x7f04000f;
+        public static final int action_settings=0x7f040010;
         public static final int budget_bar=0x7f04000b;
         public static final int button1=0x7f04000c;
         public static final int clickRemove=0x7f040000;
         public static final int flingRemove=0x7f040001;
-        public static final int interestList=0x7f04000d;
+        public static final int interestList=0x7f04000e;
         public static final int onDown=0x7f040002;
         public static final int onLongPress=0x7f040004;
         public static final int onMove=0x7f040003;
         public static final int origin_city=0x7f040006;
+        public static final int promptProgress=0x7f04000d;
         public static final int prompt_budget=0x7f04000a;
         public static final int prompt_city=0x7f040005;
         public static final int prompt_date=0x7f040007;
         public static final int prompt_duration=0x7f040008;
-        public static final int recommendations=0x7f04000e;
+        public static final int recommendations=0x7f04000f;
         public static final int trip_duration=0x7f040009;
     }
     public static final class layout {
         public static final int activity_enter_trip_details=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_rank_interests=0x7f030002;
-        public static final int activity_reccomendations=0x7f030003;
+        public static final int activity_progress=0x7f030002;
+        public static final int activity_rank_interests=0x7f030003;
+        public static final int activity_reccomendations=0x7f030004;
     }
     public static final class menu {
         public static final int display_message=0x7f080000;
         public static final int enter_city=0x7f080001;
         public static final int enter_trip_details=0x7f080002;
         public static final int main=0x7f080003;
-        public static final int rank_interests=0x7f080004;
-        public static final int reccomendations=0x7f080005;
+        public static final int progress=0x7f080004;
+        public static final int rank_interests=0x7f080005;
+        public static final int reccomendations=0x7f080006;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -227,9 +230,11 @@ containing a value of this type.
         public static final int input_prompt_origin_city=0x7f060003;
         public static final int input_prompt_start_date=0x7f060004;
         public static final int input_prompt_trip_duration=0x7f060005;
+        public static final int show_progress_prompt=0x7f060010;
         public static final int title_activity_display_message=0x7f060009;
         public static final int title_activity_enter_city=0x7f06000a;
         public static final int title_activity_enter_trip_details=0x7f06000b;
+        public static final int title_activity_progress=0x7f06000f;
         public static final int title_activity_rank_interests=0x7f06000c;
         public static final int title_activity_reccomendations=0x7f06000e;
     }

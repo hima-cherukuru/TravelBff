@@ -18,5 +18,4 @@ public class ReccomendationsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.reccomendations, menu);
 		return true;
 	}
-
 }

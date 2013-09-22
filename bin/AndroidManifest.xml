@@ -54,6 +54,14 @@
             android:name="emirates.travel.travelbff.ReccomendationsActivity"
             android:label="@string/title_activity_reccomendations" >
         </activity>
+        <activity
+            android:name="emirates.travel.travelbff.ProgressActivity"
+            android:label="@string/title_activity_progress"
+            android:parentActivityName="emirates.travel.travelbff.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="emirates.travel.travelbff.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
