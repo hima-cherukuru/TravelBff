@@ -175,9 +175,10 @@ public class RankInterestsActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(String result) {
-			Intent progressIntent = new Intent(getBaseContext(),
+			Intent recommendationsIntent = new Intent(getBaseContext(),
 					ReccomendationsActivity.class);
-			startActivity(progressIntent);
+			recommendationsIntent.putExtra("FINAL_MAP", finalScoreMap);
+			startActivity(recommendationsIntent);
 		}
 	}
 
