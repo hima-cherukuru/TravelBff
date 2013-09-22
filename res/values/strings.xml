@@ -18,5 +18,6 @@
     <string name="title_activity_reccomendations">ReccomendationsActivity</string>
     <string name="title_activity_progress">ProgressActivity</string>
     <string name="show_progress_prompt">Searching for your next destination</string>
+    <string name="title_activity_display_city_info">DisplayCityInfoActivity</string>
 
 </resources>

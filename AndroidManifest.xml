@@ -62,6 +62,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="emirates.travel.travelbff.MainActivity" />
         </activity>
+        <activity
+            android:name="emirates.travel.travelbff.DisplayCityInfoActivity"
+            android:label="@string/title_activity_display_city_info" >
+        </activity>
     </application>
 
 </manifest>

@@ -2,12 +2,14 @@ package emirates.travel.travelbff;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.TreeMap;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.DragEvent;
 import android.view.View;
+import android.view.View.OnDragListener;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
@@ -17,21 +19,22 @@ import android.widget.Toast;
  
 public class ReccomendationsActivity extends Activity {
 	ReccomendationsActivity instance;
-	TreeMap<Integer, String> finalScoreMap = new TreeMap<Integer, String>();
+	HashMap<Integer, String> finalScoreMap = new HashMap<Integer, String>();
 	
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
  
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reccomendations);
         
         Intent intent = getIntent();
 		instance = this;
-		finalScoreMap = (TreeMap<Integer, String>) intent.getExtras().get("FINAL_MAP");
+		finalScoreMap = (HashMap<Integer, String>) intent.getExtras().get("RECOMMENDATIONS");
  
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.expandableListView1);
@@ -83,20 +86,35 @@ public class ReccomendationsActivity extends Activity {
         // Listview on child click listener
         expListView.setOnChildClickListener(new OnChildClickListener() {
  
-            @Override
+            @SuppressLint("NewApi")
+			@Override
             public boolean onChildClick(ExpandableListView parent, View v,
                     int groupPosition, int childPosition, long id) {
                 // TODO Auto-generated method stub
-                Toast.makeText(
-                        getApplicationContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                        listDataHeader.get(groupPosition)).get(
-                                        childPosition), Toast.LENGTH_SHORT)
-                        .show();
+//                Toast.makeText(
+//                        getApplicationContext(),
+//                        listDataHeader.get(groupPosition)
+//                                + " : "
+//                                + listDataChild.get(
+//                                        listDataHeader.get(groupPosition)).get(
+//                                        childPosition), Toast.LENGTH_SHORT)
+//                        .show();
+            	Intent intent = new Intent(getBaseContext(),
+						DisplayCityInfoActivity.class);
+				startActivity(intent);
                 return false;
             }
+        });
+        
+        expListView.setOnDragListener(new OnDragListener() {
+
+			@Override
+			public boolean onDrag(View arg0, DragEvent arg1) {
+				Intent intent = new Intent(getBaseContext(),
+						DisplayCityInfoActivity.class);
+				startActivity(intent);
+				return false;
+			}
         });
     }
  
@@ -108,9 +126,9 @@ public class ReccomendationsActivity extends Activity {
         listDataChild = new HashMap<String, List<String>>();
  
         // Adding child data
-        listDataHeader.add(finalScoreMap.get(1));
-        listDataHeader.add(finalScoreMap.get(2));
-        listDataHeader.add(finalScoreMap.get(3));
+        listDataHeader.add("Chicago, USA");
+        listDataHeader.add("Tokyo, Japan");
+        listDataHeader.add("Salvador, Brazil");
  
         // Adding child data
         List<String> city1 = new ArrayList<String>();
