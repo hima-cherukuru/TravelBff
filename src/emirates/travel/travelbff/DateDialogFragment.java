@@ -2,8 +2,6 @@ package emirates.travel.travelbff;
 
 import java.util.Calendar;
 
-import emirates.travel.travelbff.EnterTripDetailsActivity.DateDialogFragmentListener;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -11,6 +9,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.DatePicker;
+import emirates.travel.travelbff.EnterTripDetailsActivity.DateDialogFragmentListener;
 
 @SuppressLint("NewApi")
 public class DateDialogFragment extends DialogFragment {

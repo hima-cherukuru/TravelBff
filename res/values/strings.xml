@@ -9,10 +9,11 @@
     <string name="input_prompt_trip_duration">For how many days?</string>
     <string name="input_prompt_budget_range">What\'s your budget?</string>
     <string name="app_flow_continue">Next Step</string>
+    <string name="app_flow_finish">Whatchoo got for me, bff?</string>
     <string name="title_activity_display_message">Enter some details</string>
     <string name="title_activity_enter_city">Enter some details</string>
     <string name="title_activity_enter_trip_details">Enter some details, my bestie!</string>
-    <string name="title_activity_rank_interests">RankInterestsActivity</string>
+    <string name="title_activity_rank_interests">Drag and Drop to Rank Your Interests</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

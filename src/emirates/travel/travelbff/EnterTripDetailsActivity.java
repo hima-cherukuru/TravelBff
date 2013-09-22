@@ -2,9 +2,14 @@ package emirates.travel.travelbff;
 
 import java.util.Calendar;
 
-import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,11 +22,6 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import android.support.v4.app.NavUtils;
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
 
 @SuppressLint("NewApi")
 public class EnterTripDetailsActivity extends Activity {
@@ -72,9 +72,7 @@ public class EnterTripDetailsActivity extends Activity {
 			@Override
 			public void onClick(View view) {
 				Intent intent = new Intent(getBaseContext(), RankInterestsActivity.class);
-				intent.putExtra("START_CITY", originCity.getText().toString());
-				intent.putExtra("START_DATE", startDate.getText());
-				intent.putExtra("TRIP_DURATION", duration.getText().toString());
+				intent.putExtra("START_CITY_DATE_DURATION", new String[]{originCity.getText().toString(),startDate.getText().toString(),duration.getText().toString()});
 				intent.putExtra("BUDGET", budget.getProgress());
 				startActivity(intent);
 				finish();
