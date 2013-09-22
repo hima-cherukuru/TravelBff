@@ -12,53 +12,59 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 public class RankInterestsActivity extends Activity {
 	RankInterestsActivity instance;
 	String[] cityDateDurationInput;
 	int budget;
-	
+	Button nextStep;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rank_interests);
-		
+
 		Intent intent = getIntent();
 		instance = this;
-		cityDateDurationInput = intent.getStringArrayExtra("START_CITY_DATE_DURATION");
+		cityDateDurationInput = intent
+				.getStringArrayExtra("START_CITY_DATE_DURATION");
 		budget = intent.getIntExtra("BUDGET", 0);
-		
+
 		final DragSortListView listview = (DragSortListView) findViewById(R.id.interestList);
-		String[] values = new String[] { "People Culture", "Music", "Adventure", 
-				"History", "Entertainment", "Food", "Nature"};
-		
+		String[] values = new String[] { "People Culture", "Music",
+				"Adventure", "History", "Entertainment", "Food", "Nature" };
+
 		final ArrayList<String> list = new ArrayList<String>();
 		for (int i = 0; i < values.length; ++i) {
-		      list.add(values[i]);
-		    }
-		    final StableArrayAdapter adapter = new StableArrayAdapter(this,
-		        android.R.layout.simple_list_item_1, list);
-		    listview.setAdapter(adapter);
+			list.add(values[i]);
+		}
+		final StableArrayAdapter adapter = new StableArrayAdapter(this,
+				android.R.layout.simple_list_item_1, list);
+		listview.setBackgroundColor(0xFFFFFF);
+		listview.setAdapter(adapter);
+		
+		nextStep = (Button) findViewById(R.id.recommendations);
+		nextStep.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getBaseContext(), ReccomendationsActivity.class);
+				intent.putExtra("START_CITY_DATE_DURATION", cityDateDurationInput);
+				intent.putExtra("BUDGET", budget);
+				
+				final ArrayList<String> finalList = new ArrayList<String>();
+				for (int i = 0; i < 6; ++i) {
+					finalList.add((String) listview.getItemAtPosition(i));
+				}
+				intent.putExtra("RANKINGS", finalList);
+				startActivity(intent);
+				finish();
+			}
+		});
 
-//		    listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//		      @Override
-//		      public void onItemClick(AdapterView<?> parent, final View view,
-//		          int position, long id) {
-//		        final String item = (String) parent.getItemAtPosition(position);
-//		        view.animate().setDuration(2000).alpha(0)
-//		            .withEndAction(new Runnable() {
-//		              @Override
-//		              public void run() {
-//		                list.remove(item);
-//		                adapter.notifyDataSetChanged();
-//		                view.setAlpha(1);
-//		              }
-//		            });
-//		      }
-//
-//		    });
 	}
 
 	@Override
@@ -70,26 +76,26 @@ public class RankInterestsActivity extends Activity {
 
 	private class StableArrayAdapter extends ArrayAdapter<String> {
 
-	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 
-	    public StableArrayAdapter(Context context, int textViewResourceId,
-	        List<String> objects) {
-	      super(context, textViewResourceId, objects);
-	      for (int i = 0; i < objects.size(); ++i) {
-	        mIdMap.put(objects.get(i), i);
-	      }
-	    }
+		public StableArrayAdapter(Context context, int textViewResourceId,
+				List<String> objects) {
+			super(context, textViewResourceId, objects);
+			for (int i = 0; i < objects.size(); ++i) {
+				mIdMap.put(objects.get(i), i);
+			}
+		}
 
-	    @Override
-	    public long getItemId(int position) {
-	      String item = getItem(position);
-	      return mIdMap.get(item);
-	    }
+		@Override
+		public long getItemId(int position) {
+			String item = getItem(position);
+			return mIdMap.get(item);
+		}
 
-	    @Override
-	    public boolean hasStableIds() {
-	      return true;
-	    }
+		@Override
+		public boolean hasStableIds() {
+			return true;
+		}
 
-	  }
+	}
 }

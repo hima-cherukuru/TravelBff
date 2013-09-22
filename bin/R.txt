@@ -18,7 +18,14 @@ int attr track_drag_sort 0x7f010005
 int attr use_default_controller 0x7f010011
 int dimen activity_horizontal_margin 0x7f050000
 int dimen activity_vertical_margin 0x7f050001
-int drawable ic_launcher 0x7f020000
+int drawable findme 0x7f020000
+int drawable getstarted 0x7f020001
+int drawable ic_launcher 0x7f020002
+int drawable nextstep 0x7f020003
+int drawable screen1background 0x7f020004
+int drawable screen2background 0x7f020005
+int drawable screen3background 0x7f020006
+int drawable startscreen 0x7f020007
 int id action_settings 0x7f04000f
 int id budget_bar 0x7f04000b
 int id button1 0x7f04000c
@@ -38,11 +45,13 @@ int id trip_duration 0x7f040009
 int layout activity_enter_trip_details 0x7f030000
 int layout activity_main 0x7f030001
 int layout activity_rank_interests 0x7f030002
+int layout activity_reccomendations 0x7f030003
 int menu display_message 0x7f080000
 int menu enter_city 0x7f080001
 int menu enter_trip_details 0x7f080002
 int menu main 0x7f080003
 int menu rank_interests 0x7f080004
+int menu reccomendations 0x7f080005
 int string action_settings 0x7f060001
 int string app_flow_continue 0x7f060007
 int string app_flow_finish 0x7f060008
@@ -57,6 +66,7 @@ int string title_activity_display_message 0x7f060009
 int string title_activity_enter_city 0x7f06000a
 int string title_activity_enter_trip_details 0x7f06000b
 int string title_activity_rank_interests 0x7f06000c
+int string title_activity_reccomendations 0x7f06000e
 int style AppBaseTheme 0x7f070000
 int style AppTheme 0x7f070001
 int[] styleable DragSortListView { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011 }

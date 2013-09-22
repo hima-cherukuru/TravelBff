@@ -15,5 +15,6 @@
     <string name="title_activity_enter_trip_details">Enter some details, my bestie!</string>
     <string name="title_activity_rank_interests">Drag and Drop to Rank Your Interests</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_reccomendations">ReccomendationsActivity</string>
 
 </resources>

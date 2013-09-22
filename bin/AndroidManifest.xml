@@ -50,6 +50,10 @@
             android:name="emirates.travel.travelbff.RankInterestsActivity"
             android:label="@string/title_activity_rank_interests" >
         </activity>
+        <activity
+            android:name="emirates.travel.travelbff.ReccomendationsActivity"
+            android:label="@string/title_activity_reccomendations" >
+        </activity>
     </application>
 
 </manifest>
